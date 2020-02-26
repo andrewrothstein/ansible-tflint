@@ -1,0 +1,9 @@
+---
+# vars file for tflint
+tflint_platform: '{{ tflint_os }}_{{ tflint_arch }}'
+tflint_url: '{{ tflint_mirror }}/{{ tflint_ver }}/tflint_{{ tflint_platform }}.zip'
+tflint_tmp_zip: /tmp/tflint_{{ tflint_ver }}_{{ tflint_platform }}.zip
+tflint_checksum: '{{ tflint_checksums[tflint_ver][tflint_platform] }}'
+tflint_install_dir: '{{ tflint_parent_install_dir }}/tflint-{{ tflint_ver }}'
+tflint_exe: '{{ tflint_install_dir }}/tflint'
+tflint_link: '{{ tflint_parent_install_dir }}/bin/tflint'

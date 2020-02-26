@@ -1,0 +1,56 @@
+---
+- name: resolve platform specific vars
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      skip: true
+      paths:
+        - '{{ role_path }}/vars'
+- name: look for install
+  become: yes
+  stat:
+    path: '{{ tflint_install_dir }}'
+  changed_when: False
+  register: tflint_binary
+- when: not tflint_binary.stat.exists
+  block:
+    - name: download zip
+      become: yes
+      become_user: root
+      get_url:
+        url: '{{ tflint_url }}'
+        dest: '{{ tflint_tmp_zip }}'
+        mode: 0644
+        checksum: '{{ tflint_checksum }}'
+    - name: mkdir
+      become: yes
+      become_user: root
+      file:
+        path: '{{ tflint_install_dir }}'
+        state: directory
+        mode: 0755
+    - name: unarchive
+      become: yes
+      become_user: root
+      unarchive:
+        remote_src: yes
+        src: '{{ tflint_tmp_zip }}'
+        dest: '{{ tflint_install_dir }}'
+        creates: '{{ tflint_exe }}'
+  always:
+    - name: cleanup
+      become: yes
+      become_user: root
+      file:
+        path: '{{ tflint_tmp_zip }}'
+        state: absent
+- name: link
+  become: yes
+  become_user: root
+  file:
+    src: '{{ tflint_exe }}'
+    dest: '{{ tflint_link }}'
+    state: link
