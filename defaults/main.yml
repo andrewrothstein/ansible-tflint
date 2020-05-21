@@ -1,6 +1,6 @@
 ---
 # defaults file for tflint
-tflint_ver: v0.16.0
+tflint_ver: v0.16.1
 tflint_mirror: https://github.com/terraform-linters/tflint/releases/download
 tflint_parent_install_dir: /usr/local
 tflint_os: linux
@@ -177,3 +177,37 @@ tflint_checksums:
     windows_386: sha256:ce5b9dfe15567dca881af3b4bfb3dc3067e3b0a32150293ae0ac39564dd0c1bd
     # https://github.com/terraform-linters/tflint/releases/download/v0.16.0/tflint_windows_amd64.zip
     windows_amd64: sha256:b2a406d2993aa873d426fa57d30ac63b6cb926a9507a305d52aa1433ef338089
+  # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/checksums.txt
+  v0.16.1:
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_darwin_386.zip
+    darwin_386: sha256:152a4781ae882fb84b43a845e38976fbf6ed4e2e65f7fbc7d5639b36601e3438
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_darwin_amd64.zip
+    darwin_amd64: sha256:70614677322844a14bbf356e53b967c1bce66ae9739539ba619456442576fa61
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_freebsd_386.zip
+    freebsd_386: sha256:859126cfecf73e521f6dd3b1008cb3d86ca443ba3729b173ddf6a87253732c97
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_freebsd_amd64.zip
+    freebsd_amd64: sha256:e6d069fd0f2f83886d4ab7394c20849d97413c57aaec6dcbf8a0238589d70f30
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_freebsd_arm.zip
+    freebsd_arm: sha256:4a939a04ae65434250537eafcefd66f18c78bf6e8519e2420f6074498ccbcc31
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_netbsd_386.zip
+    netbsd_386: sha256:6d16fd907a16b770198169c309082d9e2868338fda0c31d66c9bf6936374fe08
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_netbsd_amd64.zip
+    netbsd_amd64: sha256:f3524a35761013f47fc71fcbb774f2f724a7719c1fd12611b69bc89732058a58
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_netbsd_arm.zip
+    netbsd_arm: sha256:ea192ae3edd201587c8c6ec746d5575fc2a212af24700a6ee2248dc4cf1d5a2c
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_openbsd_386.zip
+    openbsd_386: sha256:117fac3edfb93aa3c714885eaef6ac6a8944028dd2721c876e9c50db5b5417d5
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_openbsd_amd64.zip
+    openbsd_amd64: sha256:3a21bcdf0a5a0d8ae4e5abd4fe41dce723a63087b2c1c885c078f24f11fe3a21
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_openbsd_arm.zip
+    openbsd_arm: sha256:ded466800fafa7ff9b3928e2b62727751d99950f3a4d2519b126c0f345918ba4
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_linux_386.zip
+    linux_386: sha256:48d7bed726a9abb7cfae56f2d2300169d8885640d1479da72c7a1f0ef08d30a3
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_linux_amd64.zip
+    linux_amd64: sha256:6c3c454752cb8674748087a14b8540858a61af6b954b08eb86e6e578c3e2278d
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_linux_arm.zip
+    linux_arm: sha256:1db8ac7ccf9bea238148e96f52baf980f52a54db58c5ec87e90aa881ceb8ba98
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_windows_386.zip
+    windows_386: sha256:a3f5f6b557583a2d7e17ef490ab85c5f56efb253bea1ed44289307bd5c69b5cc
+    # https://github.com/terraform-linters/tflint/releases/download/v0.16.1/tflint_windows_amd64.zip
+    windows_amd64: sha256:8e7dd5df9ad65b7d5e5a7c3cb85b1fb1fa220a7b4584b80ddc2e02ad88e733ae
