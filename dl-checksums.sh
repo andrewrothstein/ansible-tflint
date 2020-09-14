@@ -30,7 +30,6 @@ dl_ver() {
     printf "  # %s\n" $url
     printf "  %s:\n" $ver
 
-    dl $ver $lchecksums darwin 386
     dl $ver $lchecksums darwin amd64
     dl $ver $lchecksums freebsd 386
     dl $ver $lchecksums freebsd amd64

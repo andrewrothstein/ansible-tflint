@@ -383,8 +383,6 @@ tflint_checksums:
     windows_amd64: sha256:fe716ccc2b8d46311f97bd800a15ad69a046e0ad1afdabd3b51b1b2455b32c2d
   # https://github.com/terraform-linters/tflint/releases/download/v0.20.1/checksums.txt
   v0.20.1:
-    # https://github.com/terraform-linters/tflint/releases/download/v0.20.1/tflint_darwin_386.zip
-    darwin_386: sha256:
     # https://github.com/terraform-linters/tflint/releases/download/v0.20.1/tflint_darwin_amd64.zip
     darwin_amd64: sha256:ad9fae8e3cf6f30da4816ab419ddf5f343fb6e7cd8a6b9899097cf17c9106061
     # https://github.com/terraform-linters/tflint/releases/download/v0.20.1/tflint_freebsd_386.zip
