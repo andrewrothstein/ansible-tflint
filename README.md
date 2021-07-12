@@ -1,6 +1,6 @@
 andrewrothstein.tflint
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-tflint.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-tflint)
+![Build Status](https://github.com/andrewrothstein/ansible-tflint/actions/workflows/build.yml/badge.svg)
 
 Installs [tflint](https://github.com/terraform-linters/tflint).
 
