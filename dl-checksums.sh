@@ -31,15 +31,6 @@ dl_ver() {
     printf "  %s:\n" $ver
 
     dl $ver $lchecksums darwin amd64
-    dl $ver $lchecksums freebsd 386
-    dl $ver $lchecksums freebsd amd64
-    dl $ver $lchecksums freebsd arm
-    dl $ver $lchecksums netbsd 386
-    dl $ver $lchecksums netbsd amd64
-    dl $ver $lchecksums netbsd arm
-    dl $ver $lchecksums openbsd 386
-    dl $ver $lchecksums openbsd amd64
-    dl $ver $lchecksums openbsd arm
     dl $ver $lchecksums linux 386
     dl $ver $lchecksums linux amd64
     dl $ver $lchecksums linux arm
@@ -47,4 +38,4 @@ dl_ver() {
     dl $ver $lchecksums windows amd64
 }
 
-dl_ver ${1:-v0.32.1}
+dl_ver ${1:-v0.33.0}
