@@ -24,7 +24,7 @@ dl_ver() {
     local lchecksums="$DIR/${APP}_${ver}_checksums.txt"
     if [ ! -e $lchecksums ];
     then
-        wget -q -O $lchecksums $url
+        curl -sSLf -o $lchecksums $url
     fi
 
     printf "  # %s\n" $url
@@ -38,4 +38,4 @@ dl_ver() {
     dl $ver $lchecksums windows amd64
 }
 
-dl_ver ${1:-v0.34.0}
+dl_ver ${1:-v0.34.1}
