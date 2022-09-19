@@ -1,4 +1,6 @@
 ---
+- include_role:
+    name: andrewrothstein.unarchive-deps
 - name: resolve platform specific vars
   include_vars: '{{ item }}'
   with_first_found:
@@ -10,7 +12,7 @@
       paths:
         - '{{ role_path }}/vars'
 - name: look for install in {{ tflint_install_dir }}
-  become: yes
+  become: true
   stat:
     path: '{{ tflint_install_dir }}'
   changed_when: False
@@ -18,7 +20,7 @@
 - when: not tflint_binary.stat.exists
   block:
     - name: downloading {{ tflint_url }}
-      become: yes
+      become: true
       become_user: root
       get_url:
         url: '{{ tflint_url }}'
@@ -26,29 +28,29 @@
         mode: 0644
         checksum: '{{ tflint_checksum }}'
     - name: mkdir {{ tflint_install_dir }}
-      become: yes
+      become: true
       become_user: root
       file:
         path: '{{ tflint_install_dir }}'
         state: directory
         mode: 0755
     - name: unarchive to {{ tflint_install_dir }}
-      become: yes
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
+        remote_src: true
         src: '{{ tflint_tmp_zip }}'
         dest: '{{ tflint_install_dir }}'
         creates: '{{ tflint_exe }}'
   always:
     - name: rm {{ tflint_tmp_zip }}
-      become: yes
+      become: true
       become_user: root
       file:
         path: '{{ tflint_tmp_zip }}'
         state: absent
 - name: link {{ tflint_link }} to {{ tflint_exe }}
-  become: yes
+  become: true
   become_user: root
   file:
     src: '{{ tflint_exe }}'

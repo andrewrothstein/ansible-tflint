@@ -1,5 +1,7 @@
 ---
 # vars file for tflint
+tflint_os: '{{ ansible_system | lower }}'
+tflint_arch: '{{ tflint_arch_map[ansible_architecture] }}'
 tflint_platform: '{{ tflint_os }}_{{ tflint_arch }}'
 tflint_url: '{{ tflint_mirror }}/{{ tflint_ver }}/tflint_{{ tflint_platform }}.zip'
 tflint_tmp_zip: /tmp/tflint_{{ tflint_ver }}_{{ tflint_platform }}.zip
