@@ -1,6 +1,6 @@
 ---
 # defaults file for tflint
-tflint_ver: v0.42.2
+tflint_ver: v0.43.0
 tflint_mirror: https://github.com/terraform-linters/tflint/releases/download
 tflint_parent_install_dir: /usr/local
 tflint_arch_map:
@@ -1313,3 +1313,21 @@ tflint_checksums:
     windows_386: sha256:5f8f173950a8e3d6d64eb16c020b5aceda4a135e34f76fa981d663e0d0e3a3ec
     # https://github.com/terraform-linters/tflint/releases/download/v0.42.2/tflint_windows_amd64.zip
     windows_amd64: sha256:5a79187d59d6cc508e532cfe95fc934af01ff034a4a74be0bce6727536e17f9b
+  # https://github.com/terraform-linters/tflint/releases/download/v0.43.0/checksums.txt
+  v0.43.0:
+    # https://github.com/terraform-linters/tflint/releases/download/v0.43.0/tflint_darwin_amd64.zip
+    darwin_amd64: sha256:4096896d622c6255d44440b3582cfd3614348201e71ef5565c1eb72f7f322c99
+    # https://github.com/terraform-linters/tflint/releases/download/v0.43.0/tflint_darwin_arm64.zip
+    darwin_arm64: sha256:b274361bd32c7d7d4df44493bee2e622ee07b1b2d770d6e1487ba24655ca4c28
+    # https://github.com/terraform-linters/tflint/releases/download/v0.43.0/tflint_linux_386.zip
+    linux_386: sha256:8392b96c5d4a60501ea92ffcd17b13cae0961b75a347a8827eeda19dda3dbb26
+    # https://github.com/terraform-linters/tflint/releases/download/v0.43.0/tflint_linux_amd64.zip
+    linux_amd64: sha256:a40b0bdb2e4629ef8105c62bffc90f45fe4d8d7a2f667ff1a58b2ec9bf1f7be6
+    # https://github.com/terraform-linters/tflint/releases/download/v0.43.0/tflint_linux_arm.zip
+    linux_arm: sha256:6d2fd32c58dc24c5d196e32aacf31c2613423128a3f146791494332c660d565b
+    # https://github.com/terraform-linters/tflint/releases/download/v0.43.0/tflint_linux_arm64.zip
+    linux_arm64: sha256:fc468ce9546b1e8fbb89364faa88f02f6661fbf4e00a81df08794cb3d7c7b69d
+    # https://github.com/terraform-linters/tflint/releases/download/v0.43.0/tflint_windows_386.zip
+    windows_386: sha256:7725a39a413dc3640972724ce0d7d3419c3a65feb4d84e011a5dd9f275e215a4
+    # https://github.com/terraform-linters/tflint/releases/download/v0.43.0/tflint_windows_amd64.zip
+    windows_amd64: sha256:2d9333a66cc80596f603a76fc08d553f653cd8999784492c3a73524b842c9016
