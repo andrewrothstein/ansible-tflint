@@ -15,7 +15,7 @@
   become: true
   stat:
     path: '{{ tflint_install_dir }}'
-  changed_when: False
+  changed_when: false
   register: tflint_binary
 - when: not tflint_binary.stat.exists
   block:
