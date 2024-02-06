@@ -1,7 +1,8 @@
 ---
-- include_role:
+- name: Installing andrewrothstein.unarchivedeps
+  ansible.builtin.include_role:
     name: andrewrothstein.unarchivedeps
-- name: resolve platform specific vars
+- name: Resolve platform specific vars
   include_vars: '{{ item }}'
   with_first_found:
     - files:
@@ -11,48 +12,49 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: look for install in {{ tflint_install_dir }}
+- name: Look for install in {{ tflint_install_dir }}
   become: true
-  stat:
+  ansible.builtin.stat:
     path: '{{ tflint_install_dir }}'
   changed_when: false
   register: tflint_binary
-- when: not tflint_binary.stat.exists
+- name: Downloading and installing tflint
+  when: not tflint_binary.stat.exists
   block:
-    - name: downloading {{ tflint_url }}
+    - name: Downloading {{ tflint_url }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ tflint_url }}'
         dest: '{{ tflint_tmp_zip }}'
-        mode: 0644
+        mode: '644'
         checksum: '{{ tflint_checksum }}'
-    - name: mkdir {{ tflint_install_dir }}
+    - name: Mkdir {{ tflint_install_dir }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ tflint_install_dir }}'
         state: directory
-        mode: 0755
-    - name: unarchive to {{ tflint_install_dir }}
+        mode: '755'
+    - name: Unarchive to {{ tflint_install_dir }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ tflint_tmp_zip }}'
         dest: '{{ tflint_install_dir }}'
         creates: '{{ tflint_exe }}'
   always:
-    - name: rm {{ tflint_tmp_zip }}
+    - name: Rm {{ tflint_tmp_zip }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ tflint_tmp_zip }}'
         state: absent
-- name: link {{ tflint_link }} to {{ tflint_exe }}
+- name: Link {{ tflint_link }} to {{ tflint_exe }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ tflint_exe }}'
     dest: '{{ tflint_link }}'
     state: link
